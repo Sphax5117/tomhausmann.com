@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Getting Started with Modern Web Development"
+title: "Getting Started with Modern Web FSDNUIFSGDF"
 date: 2026-01-10
 lang: en
 french_version: /blog/debuter-avec-le-developpement-web-moderne/
 slug: getting-started-with-modern-web-development
 ---
 
-Welcome to the world of modern web development! Whether you're just starting out or looking to refresh your skills, this guide will walk you through the essential concepts and tools that are shaping the web today.
+Welcomtest you through the essential concepts and tools that are shaping the web today.
 
 ## The Foundation: HTML, CSS, and JavaScript
 
