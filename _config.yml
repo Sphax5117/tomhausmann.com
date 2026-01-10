@@ -1,0 +1,15 @@
+# Site settings
+title: Tom Hausmann
+description: Blog & Portfolio
+url: "https://sphax5117.github.io"
+baseurl: "/tomhausmann.com"
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
