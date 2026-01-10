@@ -1,46 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tom Hausmann - Portfolio & Blog</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Language selector -->
-    <div class="language-selector">
-        <a href="index.html" class="lang-btn active">EN</a>
-        <a href="index-fr.html" class="lang-btn">FR</a>
-    </div>
-
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">
-                <a href="index.html">Tom Hausmann</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="https://www.youtube.com/@tomhausmann" target="_blank" class="youtube-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                    YouTube
-                </a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-
+---
+layout: default
+lang: en
+---
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -102,41 +63,16 @@
         <div class="container">
             <h2 class="section-title">Latest Posts</h2>
             <div class="blog-grid">
+                {% assign english_posts = site.posts | where: "lang", "en" | sort: "date" | reverse %}
+                {% for post in english_posts limit:3 %}
                 <article class="blog-post">
-                    <div class="blog-date">January 10, 2026</div>
-                    <h3>Getting Started with Modern Web Development</h3>
-                    <p>Explore the essential tools and frameworks that are shaping the future of web development...</p>
-                    <a href="blog/post1.html" class="blog-link">Read More →</a>
+                    <div class="blog-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="blog-link">Read More →</a>
                 </article>
-                <article class="blog-post">
-                    <div class="blog-date">January 5, 2026</div>
-                    <h3>Design Principles That Matter</h3>
-                    <p>Understanding the fundamentals of good design and how to apply them in your projects...</p>
-                    <a href="blog/post2.html" class="blog-link">Read More →</a>
-                </article>
-                <article class="blog-post">
-                    <div class="blog-date">December 28, 2025</div>
-                    <h3>Building for the Future</h3>
-                    <p>How to create sustainable and scalable applications that stand the test of time...</p>
-                    <a href="blog/post3.html" class="blog-link">Read More →</a>
-                </article>
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 Tom Hausmann. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="https://www.youtube.com/@tomhausmann" target="_blank">YouTube</a>
-                    <a href="https://github.com/Sphax5117" target="_blank">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>

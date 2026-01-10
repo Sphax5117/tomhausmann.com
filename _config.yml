@@ -1,15 +1,45 @@
 # Site settings
 title: Tom Hausmann
 description: Blog & Portfolio
-url: "https://sphax5117.github.io"
-baseurl: "/tomhausmann.com"
+url: "https://tomhausmann.com"
+baseurl: ""
 
 # Build settings
 markdown: kramdown
-theme: minima
+permalink: /blog/:title/
+
+# Include files
+include:
+  - _posts
+
+# Collections for bilingual posts
+collections:
+  posts:
+    output: true
+    permalink: /blog/:slug/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # Exclude from processing
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - blog_backup
+  - BLOG_GUIDE.md

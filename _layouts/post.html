@@ -1,0 +1,129 @@
+---
+layout: default
+---
+<style>
+    .blog-article {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: var(--spacing-xl) var(--spacing-md);
+        min-height: 60vh;
+    }
+    
+    .blog-header {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .blog-meta {
+        color: var(--color-accent);
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .blog-article h1 {
+        font-size: 2.5rem;
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text);
+    }
+    
+    .blog-article h2 {
+        font-size: 1.8rem;
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text);
+    }
+
+    .blog-article h3 {
+        font-size: 1.4rem;
+        margin-top: var(--spacing-sm);
+        margin-bottom: var(--spacing-xs);
+        color: var(--color-text);
+    }
+    
+    .blog-article p {
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.8;
+        color: var(--color-text-light);
+    }
+
+    .blog-article ul, .blog-article ol {
+        margin-bottom: var(--spacing-sm);
+        padding-left: var(--spacing-md);
+        color: var(--color-text-light);
+    }
+
+    .blog-article li {
+        margin-bottom: 0.5rem;
+        line-height: 1.8;
+    }
+
+    .blog-article code {
+        background: rgba(0, 0, 0, 0.05);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.9em;
+    }
+
+    .blog-article pre {
+        background: rgba(0, 0, 0, 0.05);
+        padding: var(--spacing-sm);
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .blog-article pre code {
+        background: none;
+        padding: 0;
+    }
+    
+    .back-link {
+        display: inline-block;
+        margin-bottom: var(--spacing-md);
+        color: var(--color-accent);
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+
+    .lang-switch {
+        margin-top: var(--spacing-lg);
+        padding-top: var(--spacing-md);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .lang-switch a {
+        color: var(--color-accent);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .lang-switch a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<article class="blog-article">
+    <a href="{{ '/' | relative_url }}{% if page.lang == 'fr' %}index-fr.html{% else %}index.html{% endif %}#blog" class="back-link">← {% if page.lang == 'fr' %}Retour au blog{% else %}Back to Blog{% endif %}</a>
+    
+    <div class="blog-header">
+        <div class="blog-meta">{{ page.date | date: "%B %d, %Y" }}</div>
+        <h1>{{ page.title }}</h1>
+    </div>
+    
+    <div class="blog-content">
+        {{ content }}
+    </div>
+
+    {% if page.lang == 'en' and page.french_version %}
+    <div class="lang-switch">
+        <a href="{{ page.french_version | relative_url }}">🇫🇷 Lire en français</a>
+    </div>
+    {% elsif page.lang == 'fr' and page.english_version %}
+    <div class="lang-switch">
+        <a href="{{ page.english_version | relative_url }}">🇬🇧 Read in English</a>
+    </div>
+    {% endif %}
+</article>
