@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Pourquoi j'ai créé ce site ?"
+title: "Débuter avec le Développement Web Moderne"
 date: 2026-01-10
 lang: fr
 english_version: /blog/getting-started-with-modern-web-development/
-slug: pourquoi-jai-cree-ce-site
+slug: debuter-avec-le-developpement-web-moderne
 ---
 
-J'ai créé ce site pour une raison toute simple : exister sur internet.
+Bienvenue dans le monde du développement web moderne ! Que vous débutiez ou que vous souhaitiez rafraîchir vos compétences, ce guide vous présentera les concepts et outils essentiels qui façonnent le web d'aujourd'hui.
 
 ## Les Fondations : HTML, CSS et JavaScript
 
