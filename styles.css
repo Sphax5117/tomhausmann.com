@@ -591,10 +591,26 @@ img {
         gap: 0.5rem;
         align-items: stretch;
         overflow-y: auto;
+        z-index: 1000;
     }
     
     .nav-menu.active {
         right: 0;
+    }
+
+    /* Mobile menu overlay - separate element */
+    .nav-menu.active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 340px;
+        bottom: 0;
+        background: rgba(60, 52, 48, 0.6);
+        z-index: -1;
+        animation: fadeIn 0.3s ease;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
     }
 
     .nav-menu li {
@@ -638,20 +654,21 @@ img {
     
     .hamburger {
         display: inline-block;
+        z-index: 1001;
     }
 
-    /* Mobile menu overlay */
-    .nav-menu.active::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(60, 52, 48, 0.6);
-        z-index: -1;
-        animation: fadeIn 0.3s ease;
-        backdrop-filter: blur(4px);
+    /* Hide header background when menu is open */
+    .header.menu-open {
+        background: transparent !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border-bottom: none !important;
+    }
+
+    .header.menu-open .logo {
+        opacity: 0;
+        pointer-events: none;
     }
 
     @keyframes fadeIn {

@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const header = document.querySelector('.header');
     const body = document.body;
     
     if (hamburger && navMenu) {
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const isActive = navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
             hamburger.setAttribute('aria-expanded', isActive);
+            if (header) header.classList.toggle('menu-open', isActive);
             
             // Prevent body scroll when menu is open
             if (isActive) {
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
+                if (header) header.classList.remove('menu-open');
                 body.style.overflow = '';
             }
         });
@@ -39,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
+                if (header) header.classList.remove('menu-open');
                 body.style.overflow = '';
             });
         });
@@ -49,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
+                if (header) header.classList.remove('menu-open');
                 body.style.overflow = '';
             }
         });
@@ -70,8 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add scroll effect to header
-    const header = document.querySelector('.header');
-    
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
