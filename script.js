@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (videoContainer) {
         // REPLACE THIS WITH YOUR CHANNEL ID
         // You can find it in your YouTube Studio URL or source code
-        const CHANNEL_ID = 'YOUR_CHANNEL_ID_HERE'; 
+        const CHANNEL_ID = 'UCsA-TlQxgvxeX_-CYru0iQQ'; 
         const RSS_URL = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
 
         async function loadLatestVideo() {
