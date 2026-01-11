@@ -2,14 +2,41 @@
 layout: default
 lang: en
 ---
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Main Blog Header -->
+    <section class="section" style="padding-bottom: 0;">
         <div class="container">
-            <h1 class="hero-title">Hello, I'm Tom Hausmann</h1>
-            <p class="hero-subtitle">Developer, Creator & Content Creator</p>
-            <div class="hero-cta">
-                <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                <a href="https://www.youtube.com/@tomhausmann" target="_blank" class="btn btn-secondary">Watch on YouTube</a>
+            <h1 class="section-title" style="margin-bottom: var(--spacing-sm);">Welcome to my Blog</h1>
+            <p style="text-align: center; font-size: 1.25rem; color: var(--color-text-light); margin-bottom: var(--spacing-lg);">Thoughts on development, content creation, and technology.</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section blog">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: var(--spacing-sm);">Latest Articles</h2>
+            <div class="blog-grid">
+                {% assign english_posts = site.posts | where: "lang", "en" | sort: "date" | reverse %}
+                {% for post in english_posts %}
+                <article class="blog-post">
+                    <div class="blog-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="blog-link">Read More →</a>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Video Section -->
+    <section class="section video-section">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: var(--spacing-sm);">Latest Video</h2>
+            <div class="video-wrapper" id="latest-video-player">
+                <div class="video-placeholder">Loading latest video...</div>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-sm);">
+                <a href="https://www.youtube.com/@tomhausmann" target="_blank" class="btn btn-secondary">Visit Channel</a>
             </div>
         </div>
     </section>
@@ -19,60 +46,8 @@ lang: en
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p>Welcome to my corner of the internet. I'm passionate about creating meaningful digital experiences and sharing knowledge through content creation.</p>
-                <p>When I'm not coding, you can find me creating videos for my YouTube channel, exploring new technologies, or working on exciting projects.</p>
+                <p>I'm Tom Hausmann. I'm passionate about creating meaningful digital experiences and sharing knowledge through content creation.</p>
+                <p>You can find me creating videos for my <a href="https://www.youtube.com/@tomhausmann" target="_blank">YouTube channel</a>.</p>
             </div>
         </div>
     </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section portfolio">
-        <div class="container">
-            <h2 class="section-title">Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Project 1</div>
-                    </div>
-                    <h3>Web Application</h3>
-                    <p>A modern web application built with cutting-edge technologies.</p>
-                    <a href="#" class="portfolio-link">Learn More →</a>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Project 2</div>
-                    </div>
-                    <h3>Mobile App</h3>
-                    <p>Cross-platform mobile application with seamless user experience.</p>
-                    <a href="#" class="portfolio-link">Learn More →</a>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Project 3</div>
-                    </div>
-                    <h3>Design System</h3>
-                    <p>Comprehensive design system for consistent brand experience.</p>
-                    <a href="#" class="portfolio-link">Learn More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="section blog">
-        <div class="container">
-            <h2 class="section-title">Latest Posts</h2>
-            <div class="blog-grid">
-                {% assign english_posts = site.posts | where: "lang", "en" | sort: "date" | reverse %}
-                {% for post in english_posts limit:3 %}
-                <article class="blog-post">
-                    <div class="blog-date">{{ post.date | date: "%B %d, %Y" }}</div>
-                    <h3>{{ post.title }}</h3>
-                    <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-                    <a href="{{ post.url | relative_url }}" class="blog-link">Read More →</a>
-                </article>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-

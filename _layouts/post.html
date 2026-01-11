@@ -76,6 +76,40 @@ layout: default
         padding: 0;
     }
     
+    /* Image Styles */
+    .blog-article img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: var(--spacing-md) auto;
+        border-radius: var(--radius-md);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .blog-article figure {
+        margin: var(--spacing-md) 0;
+    }
+
+    .blog-article figcaption {
+        text-align: center;
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+        margin-top: var(--spacing-xs);
+        font-style: italic;
+    }
+
+    .blog-featured-image {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .image-caption {
+        text-align: center;
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+        margin-top: var(--spacing-xs);
+        font-style: italic;
+    }
+    
     .back-link {
         display: inline-block;
         margin-bottom: var(--spacing-md);
@@ -111,6 +145,14 @@ layout: default
     <div class="blog-header">
         <div class="blog-meta">{{ page.date | date: "%B %d, %Y" }}</div>
         <h1>{{ page.title }}</h1>
+        {% if page.image %}
+        <div class="blog-featured-image">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+            {% if page.image_caption %}
+            <p class="image-caption">{{ page.image_caption }}</p>
+            {% endif %}
+        </div>
+        {% endif %}
     </div>
     
     <div class="blog-content">

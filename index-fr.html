@@ -3,14 +3,41 @@ layout: default
 lang: fr
 permalink: /index-fr.html
 ---
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Main Blog Header -->
+    <section class="section" style="padding-bottom: 0;">
         <div class="container">
-            <h1 class="hero-title">Bonjour, je suis Tom Hausmann</h1>
-            <p class="hero-subtitle">Développeur, Créateur & Créateur de Contenu</p>
-            <div class="hero-cta">
-                <a href="#portfolio" class="btn btn-primary">Voir Mon Travail</a>
-                <a href="https://www.youtube.com/@tomhausmann" target="_blank" class="btn btn-secondary">Regarder sur YouTube</a>
+            <h1 class="section-title" style="margin-bottom: var(--spacing-sm);">Bienvenue sur mon Blog</h1>
+            <p style="text-align: center; font-size: 1.25rem; color: var(--color-text-light); margin-bottom: var(--spacing-lg);">Réflexions sur le développement, la création de contenu et la technologie.</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section blog">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: var(--spacing-sm);">Derniers articles</h2>
+            <div class="blog-grid">
+                {% assign french_posts = site.posts | where: "lang", "fr" | sort: "date" | reverse %}
+                {% for post in french_posts %}
+                <article class="blog-post">
+                    <div class="blog-date">{{ post.date | date: "%d %B %Y" }}</div>
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="blog-link">Lire la suite →</a>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Video Section -->
+    <section class="section video-section">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: var(--spacing-sm);">Dernière Vidéo</h2>
+            <div class="video-wrapper" id="latest-video-player">
+                <div class="video-placeholder">Chargement de la vidéo...</div>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-sm);">
+                <a href="https://www.youtube.com/@tomhausmann" target="_blank" class="btn btn-secondary">Visiter la chaîne</a>
             </div>
         </div>
     </section>
@@ -20,59 +47,8 @@ permalink: /index-fr.html
         <div class="container">
             <h2 class="section-title">À Propos de Moi</h2>
             <div class="about-content">
-                <p>Bienvenue dans mon coin d'internet. Je suis passionné par la création d'expériences numériques significatives et le partage de connaissances à travers la création de contenu.</p>
-                <p>Quand je ne code pas, vous pouvez me trouver en train de créer des vidéos pour ma chaîne YouTube, d'explorer de nouvelles technologies ou de travailler sur des projets passionnants.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section portfolio">
-        <div class="container">
-            <h2 class="section-title">Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Projet 1</div>
-                    </div>
-                    <h3>Application Web</h3>
-                    <p>Une application web moderne construite avec des technologies de pointe.</p>
-                    <a href="#" class="portfolio-link">En Savoir Plus →</a>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Projet 2</div>
-                    </div>
-                    <h3>Application Mobile</h3>
-                    <p>Application mobile multiplateforme avec une expérience utilisateur fluide.</p>
-                    <a href="#" class="portfolio-link">En Savoir Plus →</a>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Projet 3</div>
-                    </div>
-                    <h3>Système de Design</h3>
-                    <p>Système de design complet pour une expérience de marque cohérente.</p>
-                    <a href="#" class="portfolio-link">En Savoir Plus →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="section blog">
-        <div class="container">
-            <h2 class="section-title">Articles Récents</h2>
-            <div class="blog-grid">
-                {% assign french_posts = site.posts | where: "lang", "fr" | sort: "date" | reverse %}
-                {% for post in french_posts limit:3 %}
-                <article class="blog-post">
-                    <div class="blog-date">{{ post.date | date: "%d %B %Y" }}</div>
-                    <h3>{{ post.title }}</h3>
-                    <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-                    <a href="{{ post.url | relative_url }}" class="blog-link">Lire Plus →</a>
-                </article>
-                {% endfor %}
+                <p>Je suis Tom Hausmann. Je suis passionné par la création d'expériences numériques significatives et le partage de connaissances.</p>
+                <p>Retrouvez mes vidéos sur ma <a href="https://www.youtube.com/@tomhausmann" target="_blank">chaîne YouTube</a>.</p>
             </div>
         </div>
     </section>
