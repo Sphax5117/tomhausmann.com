@@ -1,0 +1,54 @@
+---
+layout: default
+lang: en
+permalink: /index-en.html
+---
+    <!-- Main Blog Header -->
+    <section class="section" style="padding-bottom: 0;">
+        <div class="container">
+            <h1 class="section-title" style="margin-bottom: var(--spacing-sm);">Welcome to my Blog</h1>
+            <p style="text-align: center; font-size: 1.25rem; color: var(--color-text-light); margin-bottom: var(--spacing-lg);">Thoughts on development, content creation, and technology.</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section blog">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: var(--spacing-sm);">Latest Articles</h2>
+            <div class="blog-grid">
+                {% assign english_posts = site.posts | where: "lang", "en" | sort: "date" | reverse %}
+                {% for post in english_posts %}
+                <article class="blog-post">
+                    <div class="blog-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="blog-link">Read More →</a>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Video Section -->
+    <section class="section video-section">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: var(--spacing-sm);">Latest Video</h2>
+            <div class="video-wrapper" id="latest-video-player">
+                <div class="video-placeholder">Loading latest video...</div>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-sm);">
+                <a href="https://www.youtube.com/@tomhausmann" target="_blank" class="btn btn-secondary">Visit Channel</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I'm Tom Hausmann. I'm passionate about creating meaningful digital experiences and sharing knowledge through content creation.</p>
+                <p>You can find me creating videos for my <a href="https://www.youtube.com/@tomhausmann" target="_blank">YouTube channel</a>.</p>
+            </div>
+        </div>
+    </section>

@@ -1,27 +1,27 @@
 ---
 layout: default
-lang: en
+lang: fr
 ---
     <!-- Main Blog Header -->
     <section class="section" style="padding-bottom: 0;">
         <div class="container">
-            <h1 class="section-title" style="margin-bottom: var(--spacing-sm);">Welcome to my Blog</h1>
-            <p style="text-align: center; font-size: 1.25rem; color: var(--color-text-light); margin-bottom: var(--spacing-lg);">Thoughts on development, content creation, and technology.</p>
+            <h1 class="section-title" style="margin-bottom: var(--spacing-sm);">Bienvenue sur mon Blog</h1>
+            <p style="text-align: center; font-size: 1.25rem; color: var(--color-text-light); margin-bottom: var(--spacing-lg);">Réflexions sur le développement, la création de contenu et la technologie.</p>
         </div>
     </section>
 
     <!-- Blog Section -->
     <section id="blog" class="section blog">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: var(--spacing-sm);">Latest Articles</h2>
+            <h2 class="section-title" style="margin-bottom: var(--spacing-sm);">Derniers articles</h2>
             <div class="blog-grid">
-                {% assign english_posts = site.posts | where: "lang", "en" | sort: "date" | reverse %}
-                {% for post in english_posts %}
+                {% assign french_posts = site.posts | where: "lang", "fr" | sort: "date" | reverse %}
+                {% for post in french_posts %}
                 <article class="blog-post">
-                    <div class="blog-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                    <div class="blog-date">{{ post.date | date: "%d %B %Y" }}</div>
                     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
                     <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
-                    <a href="{{ post.url | relative_url }}" class="blog-link">Read More →</a>
+                    <a href="{{ post.url | relative_url }}" class="blog-link">Lire la suite →</a>
                 </article>
                 {% endfor %}
             </div>
@@ -31,12 +31,12 @@ lang: en
     <!-- Latest Video Section -->
     <section class="section video-section">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: var(--spacing-sm);">Latest Video</h2>
+            <h2 class="section-title" style="margin-bottom: var(--spacing-sm);">Dernière Vidéo</h2>
             <div class="video-wrapper" id="latest-video-player">
-                <div class="video-placeholder">Loading latest video...</div>
+                <div class="video-placeholder">Chargement de la vidéo...</div>
             </div>
             <div style="text-align: center; margin-top: var(--spacing-sm);">
-                <a href="https://www.youtube.com/@tomhausmann" target="_blank" class="btn btn-secondary">Visit Channel</a>
+                <a href="https://www.youtube.com/@tomhausmann" target="_blank" class="btn btn-secondary">Visiter la chaîne</a>
             </div>
         </div>
     </section>
@@ -44,10 +44,10 @@ lang: en
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">À Propos de Moi</h2>
             <div class="about-content">
-                <p>I'm Tom Hausmann. I'm passionate about creating meaningful digital experiences and sharing knowledge through content creation.</p>
-                <p>You can find me creating videos for my <a href="https://www.youtube.com/@tomhausmann" target="_blank">YouTube channel</a>.</p>
+                <p>Je suis Tom Hausmann. Je suis passionné par la création d'expériences numériques significatives et le partage de connaissances.</p>
+                <p>Retrouvez mes vidéos sur ma <a href="https://www.youtube.com/@tomhausmann" target="_blank">chaîne YouTube</a>.</p>
             </div>
         </div>
     </section>

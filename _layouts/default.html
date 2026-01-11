@@ -14,16 +14,16 @@
     <header class="header">
         <nav class="nav" role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <a href="{% if page.lang == 'fr' %}{{ '/index-fr.html' | relative_url }}{% else %}{{ '/index.html' | relative_url }}{% endif %}" aria-label="Tom Hausmann - Home">
+                <a href="{% if page.lang == 'fr' %}{{ '/index.html' | relative_url }}{% else %}{{ '/index-en.html' | relative_url }}{% endif %}" aria-label="Tom Hausmann - Home">
                     <span class="logo-text">Tom Hausmann</span>
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="{% if page.lang == 'fr' %}{{ '/index-fr.html' | relative_url }}{% else %}{{ '/index.html' | relative_url }}{% endif %}#about" class="nav-link">
+                <li><a href="{% if page.lang == 'fr' %}{{ '/index.html' | relative_url }}{% else %}{{ '/index-en.html' | relative_url }}{% endif %}#about" class="nav-link">
                     <span class="nav-icon">👤</span>
                     <span>{% if page.lang == 'fr' %}À propos{% else %}About{% endif %}</span>
                 </a></li>
-                <li><a href="{% if page.lang == 'fr' %}{{ '/index-fr.html' | relative_url }}{% else %}{{ '/index.html' | relative_url }}{% endif %}#blog" class="nav-link">
+                <li><a href="{% if page.lang == 'fr' %}{{ '/index.html' | relative_url }}{% else %}{{ '/index-en.html' | relative_url }}{% endif %}#blog" class="nav-link">
                     <span class="nav-icon">📝</span>
                     <span>Blog</span>
                 </a></li>
@@ -39,8 +39,8 @@
                 </a></li>
             </ul>
             <div class="language-selector">
-                <a href="{{ '/index.html' | relative_url }}" class="lang-btn {% if page.lang == 'en' %}active{% endif %}" aria-label="English">EN</a>
-                <a href="{{ '/index-fr.html' | relative_url }}" class="lang-btn {% if page.lang == 'fr' %}active{% endif %}" aria-label="Français">FR</a>
+                <a href="{{ '/index-en.html' | relative_url }}" class="lang-btn {% if page.lang == 'en' %}active{% endif %}" aria-label="English">EN</a>
+                <a href="{{ '/index.html' | relative_url }}" class="lang-btn {% if page.lang == 'fr' %}active{% endif %}" aria-label="Français">FR</a>
             </div>
             <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span class="hamburger-box">

@@ -140,7 +140,7 @@ layout: default
 </style>
 
 <article class="blog-article">
-    <a href="{{ '/' | relative_url }}{% if page.lang == 'fr' %}index-fr.html{% else %}index.html{% endif %}#blog" class="back-link">← {% if page.lang == 'fr' %}Retour au blog{% else %}Back to Blog{% endif %}</a>
+    <a href="{{ '/' | relative_url }}{% if page.lang == 'fr' %}#blog{% else %}index-en.html#blog{% endif %}" class="back-link">← {% if page.lang == 'fr' %}Retour au blog{% else %}Back to Blog{% endif %}</a>
     
     <div class="blog-header">
         <div class="blog-meta">{{ page.date | date: "%B %d, %Y" }}</div>
