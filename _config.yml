@@ -12,6 +12,15 @@ permalink: /blog/:title/
 include:
   - _posts
 
+# Exclude files
+exclude:
+  - vendor/
+  - vendor/bundle/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - .bundle/
+
 # Collections for bilingual posts
 collections:
   posts:
