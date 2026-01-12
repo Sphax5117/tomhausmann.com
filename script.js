@@ -124,21 +124,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 const data = await response.json();
                 
                 if (data.status === 'ok' && data.items && data.items.length > 0) {
-                    const latestVideo = data.items[0];
-                    // Extract video ID from guid (yt:video:VIDEO_ID)
-                    const videoId = latestVideo.guid.split(':')[2];
+                    // Filter out Shorts (videos with /shorts/ in the link)
+                    const regularVideos = data.items.filter(item => 
+                        !item.link.includes('/shorts/')
+                    );
                     
-                    videoContainer.innerHTML = `
-                        <iframe 
-                            width="100%" 
-                            height="100%" 
-                            src="https://www.youtube.com/embed/${videoId}" 
-                            title="${latestVideo.title}"
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
-                    `;
+                    if (regularVideos.length > 0) {
+                        const latestVideo = regularVideos[0];
+                        // Extract video ID from guid (yt:video:VIDEO_ID)
+                        const videoId = latestVideo.guid.split(':')[2];
+                        
+                        videoContainer.innerHTML = `
+                            <iframe 
+                                width="100%" 
+                                height="100%" 
+                                src="https://www.youtube.com/embed/${videoId}" 
+                                title="${latestVideo.title}"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        `;
+                    } else {
+                        console.log('No regular videos found (only Shorts)');
+                    }
                 } else {
                     console.log('No videos found or API error');
                 }
