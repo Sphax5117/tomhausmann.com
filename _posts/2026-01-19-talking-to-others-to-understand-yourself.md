@@ -3,7 +3,7 @@ layout: post
 title: Talking to others to understand yourself 
 date: 2026-01-19
 lang: en
-french_version: /parler-aux-autres-pour-se-comprendre-soi-meme
+french_version: /blog/parler-aux-autres-pour-se-comprendre-soi-meme
 slug: talking-to-others-to-understand-yourself
 ---
 
