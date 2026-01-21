@@ -7,7 +7,7 @@ french_version: /blog/j-ai-decouvert-une-app-incroyable
 slug: i-discovered-an-incredible-app
 ---
 
-![](/assets/images/feedlogo.webp)
+![](/assets/images/feedlogo.png)
 
 ## I had a problem
 
@@ -58,7 +58,7 @@ That was until I discovered a really cool app: [Feeeeeed](https://apps.apple.com
 
 ## Feeeeeed
 
-![](/assets/images/feedexplan.webp)
+![](/assets/images/feedexplan.jpeg)
 
 So, Feeeeed is an **RSS feed aggregator** that allows you to create your own news cycle, your own feed.
 

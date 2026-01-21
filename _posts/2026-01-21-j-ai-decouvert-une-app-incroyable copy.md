@@ -7,7 +7,7 @@ english_version: /blog/i-discovered-an-incredible-app
 slug: j-ai-decouvert-une-app-incroyable
 ---
 
-![](/assets/images/feedlogo.webp)
+![](/assets/images/feedlogo.png)
 
 ## J'avais un problème
 
@@ -58,7 +58,7 @@ Alors, j'abandonnais et je retournais à mes moutons.
 
 ## Feeeeeed
 
-![](/assets/images/feedexplan.webp)
+![](/assets/images/feedexplan.jpeg)
 
 Donc, Feeeeed, c'est un **agrégateur de flux RSS** qui permet justement de créer sa propre actualité, son propre feed.
 
