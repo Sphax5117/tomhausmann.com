@@ -19,6 +19,13 @@ permalink: /index-en.html
                 {% assign english_posts = site.posts | where: "lang", "en" | sort: "date" | reverse %}
                 {% for post in english_posts %}
                 <article class="blog-post">
+                    {% assign post_content = post.content %}
+                    {% assign first_image = post_content | split: '<img' | last | split: 'src="' | last | split: '"' | first %}
+                    {% if first_image != post_content %}
+                    <div class="blog-post-image">
+                        <img src="{{ first_image | relative_url }}" alt="{{ post.title }}">
+                    </div>
+                    {% endif %}
                     <div class="blog-date">{{ post.date | date: "%B %d, %Y" }}</div>
                     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
                     <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>

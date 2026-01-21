@@ -18,7 +18,15 @@ lang: fr
                 {% assign french_posts = site.posts | where: "lang", "fr" | sort: "date" | reverse %}
                 {% for post in french_posts %}
                 <article class="blog-post">
-                    <div class="blog-date">{{ post.date | date: "%d %B %Y" }}</div>
+                    {% assign post_content = post.content %}
+                    {% assign first_image = post_content | split: '<img' | last | split: 'src="' | last | split: '"' | first %}
+                    {% if first_image != post_content %}
+                    <div class="blog-post-image">
+                        <img src="{{ first_image | relative_url }}" alt="{{ post.title }}">
+                    </div>
+                    {% endif %}
+                    {% assign date_fr = post.date | date: "%d %B %Y" | replace: "January", "Janvier" | replace: "February", "Février" | replace: "March", "Mars" | replace: "April", "Avril" | replace: "May", "Mai" | replace: "June", "Juin" | replace: "July", "Juillet" | replace: "August", "Août" | replace: "September", "Septembre" | replace: "October", "Octobre" | replace: "November", "Novembre" | replace: "December", "Décembre" %}
+                    <div class="blog-date">{{ date_fr }}</div>
                     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
                     <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
                     <a href="{{ post.url | relative_url }}" class="blog-link">Lire la suite →</a>
