@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pourquoi je n'ai plus peur de poster ?
-date: 2026-01-21
+date: 2026-01-22
 lang: fr
 english_version: /blog/why-i-am-no-longer-afraid-to-post
 slug: pourquoi-je-n-ai-plus-peur-de-poster

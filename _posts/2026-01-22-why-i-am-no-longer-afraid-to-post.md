@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why I'm no longer afraid to post
-date: 2026-01-21
+date: 2026-01-22
 lang: en
 french_version: /blog/pourquoi-je-n-ai-plus-peur-de-poster
 slug: why-i-am-no-longer-afraid-to-post
