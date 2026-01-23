@@ -27,7 +27,7 @@ Je préfère te présenter 5 objets qui ont eu un réel impact sur ma productivi
 
 ## Papier, crayon
 
-![](/assets/images/desk.jpeg)
+![](/assets/images/note.jpeg)
 
 Celui-là, tu ne t'y attendais pas, hein !
 

@@ -27,7 +27,7 @@ I prefer to show you 5 objects that have had a real impact on my productivity.
 
 ## Paper and pencil
 
-![](/assets/images/desk.jpeg)
+![](/assets/images/note.jpeg)
 
 You didn't expect that one, did you!
 
